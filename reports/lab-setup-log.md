@@ -76,3 +76,13 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Browser accessible at 192.168.56.101:5601
 - [x] Kibana home shows all 4 modules
 - [x] Screenshots saved and pushed
+
+## Phase 4 — Logstash ✅
+- [x] Logstash installed
+- [x] soc-pipeline.conf created
+- [x] Input: Beats on port 5044
+- [x] Filter: Grok parsing for syslog
+- [x] Output: Elasticsearch soc-logs-* index
+- [x] JVM heap set to 256MB
+- [x] Service running and verified
+- [x] Port 5044 listening confirmed
