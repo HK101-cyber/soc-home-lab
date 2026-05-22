@@ -55,3 +55,13 @@ sudo systemctl start logstash
 # Check all services
 sudo systemctl status elasticsearch kibana logstash
 ```
+
+## Phase 2 — Elasticsearch ✅
+- [x] Elasticsearch 8.x installed
+- [x] cluster.name set to soc-home-lab
+- [x] network.host set to 0.0.0.0
+- [x] xpack security disabled for lab
+- [x] JVM heap set to 512MB
+- [x] Service enabled and running
+- [x] API verified on port 9200
+- [x] Screenshots saved
