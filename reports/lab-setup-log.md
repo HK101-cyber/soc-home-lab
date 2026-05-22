@@ -65,3 +65,14 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Service enabled and running
 - [x] API verified on port 9200
 - [x] Screenshots saved
+
+## Phase 3 — Kibana ✅
+- [x] Kibana 8.19 installed
+- [x] server.host set to 0.0.0.0
+- [x] server.port set to 5601
+- [x] elasticsearch.hosts configured
+- [x] xpack.security conflict resolved
+- [x] Service running and verified
+- [x] Browser accessible at 192.168.56.101:5601
+- [x] Kibana home shows all 4 modules
+- [x] Screenshots saved and pushed
