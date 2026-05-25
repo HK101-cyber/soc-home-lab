@@ -86,3 +86,13 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] JVM heap set to 256MB
 - [x] Service running and verified
 - [x] Port 5044 listening confirmed
+
+## Phase 5 — Filebeat ✅
+- [x] Filebeat 8.19.15 installed
+- [x] System module enabled (syslog + auth)
+- [x] Output configured to Elasticsearch
+- [x] Index template loaded
+- [x] Kibana dashboards loaded
+- [x] 86,259 documents ingested
+- [x] Logs visible in Kibana Discover
+- [x] Screenshots saved
