@@ -96,3 +96,11 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] 86,259 documents ingested
 - [x] Logs visible in Kibana Discover
 - [x] Screenshots saved
+
+## Phase 6 — Dashboard 1 ✅
+- [x] SOC Authentication Overview dashboard built
+- [x] 6 panels created with real data
+- [x] KQL queries verified working
+- [x] Dashboard exported as .ndjson
+- [x] Screenshot taken and transferred
+- [x] Pushed to GitHub
