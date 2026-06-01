@@ -2,7 +2,7 @@
 
 Enterprise SOC home lab, ELK Stack SIEM, Splunk, Wazuh XDR. Detection rules, threat hunting, attack simulations, dashboards.
 
-# SOC Home Lab — Enterprise SIEM Environment
+# SOC Home Lab - Enterprise SIEM Environment
 
 Status: Active Build  
 Lab Start Date: May 2024  
@@ -12,7 +12,7 @@ Name: Hammad Khan
 
 A fully functional Security Operations Center (SOC) home lab built from scratch on virtual machines. This lab replicates an enterprise SOC environment using three industry-standard SIEM platforms.
 
-This is a living project — detection rules, dashboards, and attack simulations are added continuously.
+This is a living project detection rules, dashboards, and attack simulations are added continuously.
 
 ## Lab Architecture
 
@@ -29,8 +29,8 @@ graph LR
 | Elasticsearch | 8.x | Log storage and search engine |
 | Kibana | 8.x | Dashboards and SIEM interface |
 | Logstash | 8.x | Log parsing and enrichment pipeline |
-| Splunk Enterprise | 9.x | Secondary SIEM — SPL detection |
-| Wazuh | 4.x | XDR — FIM, vulnerability detection |
+| Splunk Enterprise | 9.x | Secondary SIEM-SPL detection |
+| Wazuh | 4.x | XDR-FIM, vulnerability detection |
 
 ## Repository Structure
 
@@ -71,8 +71,8 @@ C2 beaconing pattern
 
 ## Dashboards Built
 
-SOC Overview — real-time alert summary  
-Failed Login Attempts — by user, IP, time  
+SOC Overview real-time alert summary  
+Failed Login Attempts - by user, IP, time  
 Network Traffic Analysis  
 Process Execution Monitor  
 User Account Changes  
@@ -98,7 +98,7 @@ Elasticsearch, Kibana, Logstash, Splunk, Wazuh, Filebeat, Winlogbeat, Sysmon, KQ
 ## Related Reports
 
 reports/soc-lab-report.md — Full technical report  
-detection-rules/rules-explained.md — Rule documentation
+detection-rules/rules-explained.md - Rule documentation
 
-Part of my cybersecurity portfolio — built command by command in a real lab.  
+Part of my cybersecurity portfolio built command by command in a real lab.  
 Connect: LinkedIn
