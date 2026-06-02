@@ -104,3 +104,11 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Dashboard exported as .ndjson
 - [x] Screenshot taken and transferred
 - [x] Pushed to GitHub
+
+## Phase 7 — Detection Rule 1 ✅
+- [x] Brute Force SSH rule documented
+- [x] KQL query: event.category:authentication AND event.outcome:failure
+- [x] Threshold: 5 failures in 5 minutes
+- [x] MITRE ATT&CK mapping: T1110
+- [x] Rule tested against real Hydra attack
+- [x] Pushed to GitHub detection-rules folder
