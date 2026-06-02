@@ -112,3 +112,12 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] MITRE ATT&CK mapping: T1110
 - [x] Rule tested against real Hydra attack
 - [x] Pushed to GitHub detection-rules folder
+
+## Phase 8 — Attack Simulation 1 ✅
+- [x] Brute force attack simulated from Kali
+- [x] 50+ failed SSH attempts generated
+- [x] Logs captured and ingested by Filebeat
+- [x] Detection rule validated (threshold: 5 in 5m)
+- [x] Screenshots taken (Kali + Ubuntu)
+- [x] Attack report documented
+- [x] MITRE T1110 mapped
