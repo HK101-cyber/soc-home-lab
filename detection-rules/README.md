@@ -1,40 +1,40 @@
 # Detection Rules Library
 
-This folder contains all custom KQL detection rules for the SOC lab environment.
+## All Rules
 
-## Rules
+| Rule ID | Name | MITRE | Severity | KQL |
+|---------|------|-------|----------|-----|
+| BF-SSH-001 | Brute Force SSH | T1110 | High | event.category:authentication AND event.outcome:failure |
+| PE-SUDO-001 | Privilege Escalation Sudo | T1548 | High | process.name:sudo AND event.outcome:success |
+| LM-SSH-001 | Lateral Movement SSH | T1021.004 | Critical | source.ip:192.168.* AND event.outcome:success |
+| SP-001 | Suspicious Process | T1059 | Medium | process.name:(bash OR sh) AND process.args:(curl OR wget) |
+| AL-001 | Account Lockout | T1110 | Medium | event.action:user-locked |
 
-### Rule 1: Brute Force SSH Attack (BF-SSH-001)
-- **File:** rule-01-bruteforce.md
-- **KQL:** event.category:authentication AND event.outcome:failure
-- **Threshold:** 5 failures in 5 minutes
-- **Status:** Active
-- **MITRE:** T1110
+## Total Rules: 5
+- Rules documented: ✅ 5/5
+- Rules tested: ✅ 1/5 (Brute Force)
+- Rules deployed: ⏳ Pending Kibana fix
 
-## How to Import Rules
+## Status
+All rules ready for production deployment once Kibana permissions fixed.
+cat > ~/soc-home-lab/detection-rules/README.md << 'EOF'
+# Detection Rules Library
 
-Rules are documented in markdown for reference and can be manually created in Kibana:
+## All Rules
 
-1. Go to Security → Rules → Create new rule
-2. Select: Custom query rule
-3. Copy KQL query from rule file
-4. Set threshold and time window as documented
-5. Add tags and MITRE technique ID
-6. Enable rule
+| Rule ID | Name | MITRE | Severity | KQL |
+|---------|------|-------|----------|-----|
+| BF-SSH-001 | Brute Force SSH | T1110 | High | event.category:authentication AND event.outcome:failure |
+| PE-SUDO-001 | Privilege Escalation Sudo | T1548 | High | process.name:sudo AND event.outcome:success |
+| LM-SSH-001 | Lateral Movement SSH | T1021.004 | Critical | source.ip:192.168.* AND event.outcome:success |
+| SP-001 | Suspicious Process | T1059 | Medium | process.name:(bash OR sh) AND process.args:(curl OR wget) |
+| AL-001 | Account Lockout | T1110 | Medium | event.action:user-locked |
 
-## Rule Naming Convention
+## Total Rules: 5
+- Rules documented: ✅ 5/5
+- Rules tested: ✅ 1/5 (Brute Force)
 
-- Format: `rule-[number]-[technique].md`
-- Example: `rule-01-bruteforce.md`, `rule-02-lateral-movement.md`
 
-## Planned Rules
+## Status
+All rules ready for production deployment once Kibana permissions fixed.
 
-- [ ] Rule 2: Privilege Escalation (sudo abuse)
-- [ ] Rule 3: Lateral Movement (SSH between servers)
-- [ ] Rule 4: Data Exfiltration (large outbound transfers)
-- [ ] Rule 5: Suspicious Process Execution
-- [ ] Rule 6: Failed Account Lockout
-- [ ] Rule 7: RDP Brute Force
-- [ ] Rule 8: Web Shell Detection
-- [ ] Rule 9: Reverse Shell Connections
-- [ ] Rule 10: Credential Dumping
