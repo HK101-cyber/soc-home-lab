@@ -43,3 +43,19 @@ EOFcat > ~/soc-home-lab/dashboards/dashboard-notes.md << 'EOF'
 - @timestamp — time of event
 
 ## Status: ✅ Complete
+
+## Dashboard 2 — SOC Network Overview
+
+### Panels
+1. Total Network Events — Metric
+2. Network Activity Timeline — Area chart
+3. Top Source IPs — Bar horizontal
+4. Failed Login Source IPs — Bar horizontal
+5. Auth Processes — Bar horizontal
+
+### KQL Queries Used
+- event.category:network
+- event.dataset:system.auth
+- event.dataset:system.auth AND event.outcome:failure
+
+### Status: ✅ Complete
