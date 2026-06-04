@@ -89,14 +89,14 @@ network.host: 0.0.0.0
 # --------------------------------------------------------------------------------
 
 # Enable security features
-xpack.security.enabled: false
+xpack.security.enabled: true
 
 xpack.security.enrollment.enabled: true
 
 # Enable encryption for HTTP API client connections, such as Kibana, Logstash, and Agents
 xpack.security.http.ssl:
   enabled: false
-  keystore.path: certs/http.p12
+  keystore.path: certs/transport.p12
 
 # Enable encryption and mutual authentication between cluster nodes
 xpack.security.transport.ssl:

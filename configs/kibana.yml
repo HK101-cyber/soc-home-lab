@@ -46,8 +46,8 @@ server.host: "0.0.0.0"
 # the username and password that the Kibana server uses to perform maintenance on the Kibana
 # index at startup. Your Kibana users still need to authenticate with Elasticsearch, which
 # is proxied through the Kibana server.
-#elasticsearch.username: "kibana_system"
-#elasticsearch.password: "pass"
+elasticsearch.username: "kibana_system"
+elasticsearch.password: "TSNVpzbY9w2vPBafeZuW"
 
 # Kibana can also authenticate to Elasticsearch via "service account tokens".
 # Service account tokens are Bearer style tokens that replace the traditional username/password based configuration.
@@ -182,5 +182,7 @@ pid.file: /run/kibana/kibana.pid
 # Maximum number of documents loaded by each shard to generate autocomplete suggestions.
 # This value must be a whole number greater than zero. Defaults to 100_000
 #unifiedSearch.autocomplete.valueSuggestions.terminateAfter: 100000
-
+xpack.encryptedSavedObjects.encryptionKey: "dd8e4f613134ab67d6c1e55a44eb97d9d67bfbe9ec6cb49de6267cc0e965ba25"
+xpack.reporting.encryptionKey: "9fe8d1222819ca88862abae9fb1c198523cfbf8b6c1eeb7e8eed9d2d03b2380d"
+xpack.security.encryptionKey: "a3fcd928d1e014b92ec9a0bde6f71f293d38aea86aae01e2600e139c132ede3e"
 
