@@ -121,3 +121,14 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Screenshots taken (Kali + Ubuntu)
 - [x] Attack report documented
 - [x] MITRE T1110 mapped
+
+## Phase 9 — Detection Rules Deployed ✅
+- [x] All 5 rules created in Kibana SIEM
+- [x] Kibana security and encryption keys configured
+- [x] Elasticsearch xpack.security enabled
+- [x] SSL certificates generated
+- [x] elastic and kibana_system passwords set
+- [x] Filebeat credentials updated
+- [x] Brute force alert confirmed firing
+- [x] All rule screenshots taken
+- [x] Security setup guide documented

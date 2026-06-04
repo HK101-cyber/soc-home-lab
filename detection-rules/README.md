@@ -1,40 +1,19 @@
 # Detection Rules Library
 
-## All Rules
+## Deployed Rules — All Active in Kibana SIEM
 
-| Rule ID | Name | MITRE | Severity | KQL |
-|---------|------|-------|----------|-----|
-| BF-SSH-001 | Brute Force SSH | T1110 | High | event.category:authentication AND event.outcome:failure |
-| PE-SUDO-001 | Privilege Escalation Sudo | T1548 | High | process.name:sudo AND event.outcome:success |
-| LM-SSH-001 | Lateral Movement SSH | T1021.004 | Critical | source.ip:192.168.* AND event.outcome:success |
-| SP-001 | Suspicious Process | T1059 | Medium | process.name:(bash OR sh) AND process.args:(curl OR wget) |
-| AL-001 | Account Lockout | T1110 | Medium | event.action:user-locked |
+| # | Rule ID | Name | MITRE | Severity | Status |
+|---|---------|------|-------|----------|--------|
+| 1 | BF-SSH-001 | Brute Force SSH Attack | T1110 | High | ✅ Active |
+| 2 | PE-SUDO-001 | Privilege Escalation via Sudo | T1548 | High | ✅ Active |
+| 3 | LM-SSH-001 | Lateral Movement via SSH | T1021.004 | Critical | ✅ Active |
+| 4 | SP-001 | Suspicious Shell Process | T1059 | Medium | ✅ Active |
+| 5 | AL-001 | Multiple Failed Auth Attempts | T1110.001 | Medium | ✅ Active |
 
-## Total Rules: 5
-- Rules documented: ✅ 5/5
-- Rules tested: ✅ 1/5 (Brute Force)
-- Rules deployed: ⏳ Pending Kibana fix
+## Alert Confirmed
+- Brute Force SSH rule triggered successfully
+- Attack simulated using Hydra from Kali Linux
+- Alert appeared in Kibana Security → Alerts
+- Screenshot saved: brute-force-alert-fired.png
 
-## Status
-All rules ready for production deployment once Kibana permissions fixed.
-cat > ~/soc-home-lab/detection-rules/README.md << 'EOF'
-# Detection Rules Library
-
-## All Rules
-
-| Rule ID | Name | MITRE | Severity | KQL |
-|---------|------|-------|----------|-----|
-| BF-SSH-001 | Brute Force SSH | T1110 | High | event.category:authentication AND event.outcome:failure |
-| PE-SUDO-001 | Privilege Escalation Sudo | T1548 | High | process.name:sudo AND event.outcome:success |
-| LM-SSH-001 | Lateral Movement SSH | T1021.004 | Critical | source.ip:192.168.* AND event.outcome:success |
-| SP-001 | Suspicious Process | T1059 | Medium | process.name:(bash OR sh) AND process.args:(curl OR wget) |
-| AL-001 | Account Lockout | T1110 | Medium | event.action:user-locked |
-
-## Total Rules: 5
-- Rules documented: ✅ 5/5
-- Rules tested: ✅ 1/5 (Brute Force)
-
-
-## Status
-All rules ready for production deployment once Kibana permissions fixed.
-
+## Total Rules: 5 deployed and active
