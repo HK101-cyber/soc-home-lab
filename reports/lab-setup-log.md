@@ -143,3 +143,10 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] All screenshots taken and pushed
 - [x] All simulation reports documented
 - [x] Complete attack kill chain documented
+
+## Phase 11 — Dashboard 3 ✅
+- [x] SOC System Overview dashboard built
+- [x] 6 panels created with real data
+- [x] Dashboard exported as .ndjson
+- [x] Screenshot taken and pushed
+- [x] Pushed to GitHub

@@ -59,3 +59,20 @@ EOFcat > ~/soc-home-lab/dashboards/dashboard-notes.md << 'EOF'
 - event.dataset:system.auth AND event.outcome:failure
 
 ### Status: ✅ Complete
+
+## Dashboard 3 — SOC System Overview
+
+### Panels
+1. Total System Events — Metric
+2. System Events Timeline — Area chart
+3. Top System Processes — Bar horizontal
+4. Log Sources Distribution — Pie chart
+5. Active Hosts — Metric
+6. Authentication Actions — Bar horizontal
+
+### KQL Queries Used
+- event.dataset:system.syslog
+- event.dataset:system.auth OR event.dataset:system.syslog
+- event.dataset:system.auth
+
+### Status: ✅ Complete
