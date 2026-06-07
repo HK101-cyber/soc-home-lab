@@ -150,3 +150,12 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Dashboard exported as .ndjson
 - [x] Screenshot taken and pushed
 - [x] Pushed to GitHub
+
+## Phase 12 — Winlogbeat ✅
+- [x] Winlogbeat 9.4.2 installed on Windows
+- [x] Application, System, Security logs configured
+- [x] Output to Elasticsearch 192.168.56.101:9200
+- [x] Service running and verified
+- [x] Windows logs visible in Kibana Discover
+- [x] Screenshots taken and pushed
+- [x] Config saved to GitHub
