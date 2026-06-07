@@ -176,3 +176,12 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Windows Event IDs monitored
 - [x] Dashboard exported as .ndjson
 - [x] Screenshot taken and pushed
+
+## Phase 15 — Attack Simulation 6 ✅
+- [x] PowerShell abuse simulated on Windows
+- [x] Sysmon captured Event ID 1 (process creation)
+- [x] Winlogbeat shipped events to Elasticsearch
+- [x] Detection rule fired in Kibana
+- [x] Complete evidence chain documented
+- [x] 4 screenshots taken and pushed
+- [x] MITRE T1059.001 mapped
