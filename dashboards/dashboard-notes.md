@@ -76,3 +76,26 @@ EOFcat > ~/soc-home-lab/dashboards/dashboard-notes.md << 'EOF'
 - event.dataset:system.auth
 
 ### Status: ✅ Complete
+
+## Dashboard 4 — SOC Windows Security Overview
+
+### Panels
+1. Total Windows Events — Metric
+2. Windows Events Timeline — Area chart
+3. New Processes Created (Event 4688) — Metric
+4. Total System Channel Events — Metric
+5. Top Windows Event IDs — Bar horizontal
+6. Top Windows Processes — Bar horizontal
+7. Windows Log Sources — Pie chart
+8. Active Windows Hosts — Metric
+
+### Data View
+- winlogbeat-*
+
+### KQL Queries Used
+- agent.type:winlogbeat
+- winlog.event_id:4688
+- winlog.channel:Security
+- winlog.channel:System
+
+### Status: ✅ Complete

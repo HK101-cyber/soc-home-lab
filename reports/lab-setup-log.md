@@ -168,3 +168,11 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Data verified in Kibana
 - [x] Screenshots taken and pushed
 - [x] Config saved to GitHub
+
+## Phase 14 — Dashboard 4 Windows Security ✅
+- [x] Windows Security Overview dashboard built
+- [x] 8 panels created with real Winlogbeat data
+- [x] Sysmon events visible in dashboard
+- [x] Windows Event IDs monitored
+- [x] Dashboard exported as .ndjson
+- [x] Screenshot taken and pushed
