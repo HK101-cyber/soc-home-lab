@@ -159,3 +159,12 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Windows logs visible in Kibana Discover
 - [x] Screenshots taken and pushed
 - [x] Config saved to GitHub
+
+## Phase 13 — Sysmon ✅
+- [x] Sysmon installed on Windows host
+- [x] SwiftOnSecurity config applied
+- [x] 23 event types being monitored
+- [x] Winlogbeat shipping Sysmon events
+- [x] Data verified in Kibana
+- [x] Screenshots taken and pushed
+- [x] Config saved to GitHub
