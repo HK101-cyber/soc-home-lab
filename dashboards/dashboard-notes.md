@@ -99,3 +99,27 @@ EOFcat > ~/soc-home-lab/dashboards/dashboard-notes.md << 'EOF'
 - winlog.channel:System
 
 ### Status: ✅ Complete
+
+## Dashboard 2 — SOC Network Overview (Updated)
+
+### Final 6 Panels
+1. Total Network Events — Metric (event.category:network)
+2. Network Activity Timeline — Area chart (@timestamp)
+3. Top Source IPs — Bar horizontal (source.ip)
+4. Top Destination IPs — Bar horizontal (host.ip)
+5. Auth Success vs Failure — Pie chart (event.outcome)
+6. Auth Events by Process — Bar horizontal (process.name)
+
+### KQL Queries Used
+- event.category:network
+- event.dataset:system.auth
+- event.dataset:system.auth AND event.outcome:failure
+- event.dataset:system.auth AND process.name:sshd
+
+### Update Notes
+- Panel 4 fixed: Changed to host.ip for destination IPs
+- Panel 5 fixed: Changed to Auth Success vs Failure pie chart
+- Panel 6 fixed: Changed to Auth Events by Process bar chart
+- All 6 panels verified with real data
+
+### Status: ✅ Updated and Complete
