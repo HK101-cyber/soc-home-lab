@@ -4,12 +4,7 @@
 ![ELK](https://img.shields.io/badge/ELK-8.19.15-blue)
 ![Platform](https://img.shields.io/badge/Platform-Ubuntu%2022.04-orange)
 
-> A fully functional Security Operations Center (SOC) home lab built
-> from scratch on virtual machines. Replicates enterprise SOC environment
-> using industry-standard SIEM platforms, detection rules, and real attack
-> simulations.
-
----
+A fully functional Security Operations Center (SOC) home lab built from scratch on virtual machines. Replicates enterprise SOC environment using industry-standard SIEM platforms, detection rules, and real attack simulations.
 
 ## Lab Details
 
@@ -21,11 +16,16 @@
 | Status | Phase 1 Complete — ELK SIEM Operational |
 | GitHub | github.com/HK101-cyber |
 
----
-
 ## Lab Architecture
 
-### Infrastructure
+```mermaid
+graph LR
+    A[Kali Linux<br/>Attacker<br/>192.168.56.100<br/>Hydra] --> B[Ubuntu SIEM Server<br/>192.168.56.101<br/>Elasticsearch 8.19.15<br/>Kibana 8.19.15<br/>Logstash 8.19.15<br/>Filebeat + Winlogbeat]
+    C[Windows Host<br/>192.168.56.x<br/>Winlogbeat<br/>Sysmon] --> B
+```
+
+## Infrastructure
+
 | Component | Details |
 |-----------|---------|
 | SIEM Server | Ubuntu Server 22.04 LTS (192.168.56.101) |
@@ -34,7 +34,8 @@
 | Hypervisor | VirtualBox |
 | Network | Host-Only Isolated (192.168.56.x) |
 
-### SIEM Stack — Phase 1 Complete
+## SIEM Stack — Phase 1 Complete
+
 | Platform | Version | Purpose | Status |
 |----------|---------|---------|--------|
 | Elasticsearch | 8.19.15 | Log storage and search | ✅ Running |
@@ -46,57 +47,41 @@
 | Splunk Enterprise | 9.x | Secondary SIEM | 🔄 Coming Soon |
 | Wazuh | 4.x | XDR and FIM | 🔄 Coming Soon |
 
----
-
 ## Repository Structure
-soc-home-lab/
-├── configs/                    ← All service configurations
-│   ├── elasticsearch.yml
-│   ├── kibana.yml
-│   ├── logstash-pipeline.conf
-│   ├── filebeat.yml
-│   ├── winlogbeat.yml
-│   ├── sysmonconfig.xml
-│   └── elasticsearch-security-setup.md
-│
-├── detection-rules/            ← KQL detection rules
-│   ├── rule-01-bruteforce.md
-│   ├── rule-02-privesc-sudo.md
-│   ├── rule-03-lateral-movement.md
-│   ├── rule-04-suspicious-process.md
-│   ├── rule-05-account-lockout.md
-│   ├── rule-06-powershell-abuse.md
-│   ├── all-siem-rules.ndjson
-│   └── README.md
-│
-├── dashboards/                 ← Exported Kibana dashboards
-│   ├── soc-auth-dashboard.ndjson
-│   ├── soc-network-dashboard.ndjson
-│   ├── soc-system-dashboard.ndjson
-│   ├── soc-windows-dashboard.ndjson
-│   └── dashboard-notes.md
-│
-├── attack-simulations/         ← Attack reports and evidence
-│   ├── simulation-01-bruteforce.md
-│   ├── simulation-02-privesc.md
-│   ├── simulation-03-lateral-movement.md
-│   ├── simulation-04-suspicious-process.md
-│   ├── simulation-05-failed-auth.md
-│   ├── simulation-06-powershell-abuse.md
-│   ├── screenshots/
-│   └── README.md
-│
-├── threat-hunts/               ← Threat hunt reports
-│   ├── hunt-01-brute-force-patterns.md
-│   ├── hunt-02-privilege-escalation.md
-│   ├── hunt-03-lateral-movement.md
-│   └── README.md
-│
-├── screenshots/                ← All evidence screenshots
-└── reports/                    ← Lab reports
-├── lab-setup-log.md
-└── soc-lab-final-report.md
----
+
+```mermaid
+graph TD
+    ROOT[soc-home-lab] --> CONFIGS[configs<br/>Service configurations]
+    ROOT --> RULES[detection-rules<br/>KQL detection rules]
+    ROOT --> DASHBOARDS[dashboards<br/>Exported Kibana dashboards]
+    ROOT --> ATTACKS[attack-simulations<br/>Attack reports + evidence]
+    ROOT --> HUNTS[threat-hunts<br/>Threat hunt reports]
+    ROOT --> SCREENS[screenshots<br/>Evidence screenshots]
+    ROOT --> REPORTS[reports<br/>Lab reports]
+    
+    CONFIGS --> ELASTIC[elasticsearch.yml]
+    CONFIGS --> KIBANA[kibana.yml]
+    CONFIGS --> LOGSTASH[logstash-pipeline.conf]
+    CONFIGS --> BEATS[filebeat.yml + winlogbeat.yml]
+    
+    RULES --> RULE1[rule-01-bruteforce.md]
+    RULES --> RULE2[rule-02-privesc-sudo.md]
+    RULES --> RULE3[rule-03-lateral-movement.md]
+    RULES --> ALLRULES[all-siem-rules.ndjson]
+    
+    DASHBOARDS --> AUTH[soc-auth-dashboard.ndjson]
+    DASHBOARDS --> NET[soc-network-dashboard.ndjson]
+    DASHBOARDS --> SYS[soc-system-dashboard.ndjson]
+    DASHBOARDS --> WIN[soc-windows-dashboard.ndjson]
+    
+    ATTACKS --> SIM1[simulation-01-bruteforce.md]
+    ATTACKS --> SIM2[simulation-02-privesc.md]
+    ATTACKS --> SIM3[simulation-03-lateral-movement.md]
+    
+    HUNTS --> HUNT1[hunt-01-brute-force-patterns.md]
+    HUNTS --> HUNT2[hunt-02-privilege-escalation.md]
+    HUNTS --> HUNT3[hunt-03-lateral-movement.md]
+```
 
 ## Detection Rules — MITRE ATT&CK Mapped
 
@@ -109,8 +94,6 @@ soc-home-lab/
 | 5 | Multiple Failed Auth | T1110.001 | Credential Access | Medium | ✅ Active |
 | 6 | PowerShell Abuse | T1059.001 | Execution | High | ✅ Active |
 
----
-
 ## Attack Simulations Performed
 
 | # | Attack | Tool | MITRE | Alert Fired |
@@ -122,9 +105,7 @@ soc-home-lab/
 | 5 | Multiple Failed Auth | SSH attempts | T1110.001 | ✅ Yes |
 | 6 | PowerShell Abuse | PowerShell | T1059.001 | ✅ Yes |
 
-**Detection Rate: 6/6 (100%)**
-
----
+Detection Rate: 6/6 (100%)
 
 ## Dashboards Built
 
@@ -135,8 +116,6 @@ soc-home-lab/
 | 3 | System Overview | 6 | filebeat-* |
 | 4 | Windows Security | 8 | winlogbeat-* |
 
----
-
 ## Threat Hunts Conducted
 
 | # | Hunt | Finding | Documents |
@@ -145,17 +124,15 @@ soc-home-lab/
 | 2 | Privilege Escalation | 891 sudo events, logging gap found | 891 |
 | 3 | Lateral Movement | 69 SSH sessions over 30 days | 69 |
 
----
-
 ## Lab Statistics
-Total Log Events:      500,000+
-Dashboards:            4 (26 panels total)
-Detection Rules:       6 (all active)
-Attack Simulations:    6 (100% detection rate)
-Threat Hunts:          3 (all confirmed)
-Security Gaps Found:   5
-GitHub Commits:        20+
----
+
+Total Log Events: 500,000+  
+Dashboards: 4 (26 panels total)  
+Detection Rules: 6 (all active)  
+Attack Simulations: 6 (100% detection rate)  
+Threat Hunts: 3 (all confirmed)  
+Security Gaps Found: 5  
+GitHub Commits: 20+
 
 ## Lab Build Timeline
 
@@ -179,37 +156,32 @@ GitHub Commits:        20+
 | Jun 8, 2026 | 3 threat hunt reports completed |
 | Jun 8, 2026 | Final SOC lab report written |
 
----
-
 ## Tools and Technologies
-SIEM:        Elasticsearch, Kibana, Logstash
-Agents:      Filebeat, Winlogbeat
-Monitoring:  Sysmon (SwiftOnSecurity config)
-Attacker:    Kali Linux, Hydra
-Query:       KQL (Kibana Query Language)
-Framework:   MITRE ATT&CK
-Platform:    Ubuntu 22.04, Windows 10/11, VirtualBox
+
+SIEM: Elasticsearch, Kibana, Logstash  
+Agents: Filebeat, Winlogbeat  
+Monitoring: Sysmon (SwiftOnSecurity config)  
+Attacker: Kali Linux, Hydra  
+Query: KQL (Kibana Query Language)  
+Framework: MITRE ATT&CK  
+Platform: Ubuntu 22.04, Windows 10/11, VirtualBox  
 Version Control: Git, GitHub
----
 
 ## Related Reports
-- reports/soc-lab-final-report.md — Complete technical report
-- detection-rules/README.md — All rule documentation
-- attack-simulations/README.md — Complete attack kill chain
-- threat-hunts/README.md — All hunt reports
 
----
+reports/soc-lab-final-report.md — Complete technical report  
+detection-rules/README.md — All rule documentation  
+attack-simulations/README.md — Complete attack kill chain  
+threat-hunts/README.md — All hunt reports
 
 ## Coming Next — Phase 2
-- Splunk Enterprise SIEM
-- SPL detection rules
-- Splunk dashboards
-- Wazuh XDR deployment
 
----
+Splunk Enterprise SIEM  
+SPL detection rules  
+Splunk dashboards  
+Wazuh XDR deployment
 
-*Part of a complete cybersecurity portfolio built command by
-command in a real lab environment.*
+Part of a complete cybersecurity portfolio built command by command in a real lab environment.
 
-**Connect:** [LinkedIn](https://linkedin.com/in/hammad-khan101)
+**Connect:** [LinkedIn](https://linkedin.com/in/hammad-khan101)  
 **GitHub:** [github.com/HK101-cyber](https://github.com/HK101-cyber)
