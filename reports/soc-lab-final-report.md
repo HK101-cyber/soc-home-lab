@@ -215,19 +215,18 @@ MITRE:          T1059.001
 - Attack documentation
 - Kill chain mapping
 
----
 
-## GitHub Repository Structure
-soc-home-lab/
-├── configs/           ← All service configurations
-├── detection-rules/   ← 6 KQL detection rules
-├── dashboards/        ← 4 exported dashboards
-├── attack-simulations/← 6 attack reports
-├── threat-hunts/      ← 3 hunt reports
-├── screenshots/       ← All evidence screenshots
-└── reports/           ← This report
----
-
+```mermaid
+graph TD
+    ROOT[soc-home-lab] 
+    ROOT --> CONFIGS[configs<br/>All service configurations]
+    ROOT --> RULES[detection-rules<br/>6 KQL detection rules]
+    ROOT --> DASHBOARDS[dashboards<br/>4 exported dashboards]
+    ROOT --> ATTACKS[attack-simulations<br/>6 attack reports]
+    ROOT --> HUNTS[threat-hunts<br/>3 hunt reports]
+    ROOT --> SCREENS[screenshots<br/>All evidence screenshots]
+    ROOT --> REPORTS[reports<br/>Lab reports]
+```
 ## Lab Statistics
 Total Log Events:      500,000+
 Dashboards Built:      4
