@@ -1,4 +1,4 @@
-# Detection Rule 2: Privilege Escalation — Sudo Abuse
+# Detection Rule 2: Privilege Escalation Sudo Abuse
 
 ## Rule Details
 - **Rule ID:** PE-SUDO-001
