@@ -4,7 +4,7 @@
 Simulate attacker using bash to download tools and run system commands.
 
 ## Attack Machine
-Ubuntu (inside — post-compromise simulation)
+Ubuntu (inside post-compromise simulation)
 
 ## Attack Commands
 ```bash
@@ -15,11 +15,11 @@ sudo bash -c "id"
 ```
 
 ## MITRE ATT&CK
-- Technique: T1059 — Command and Scripting Interpreter
+- Technique: T1059 Command and Scripting Interpreter
 - Tactic: Execution
 
 ## Kill Chain Position
-Step 5 of attack — attacker downloading tools after gaining access
+Step 5 of attack attacker downloading tools after gaining access
 
 ## Detection Rule Triggered
 - Rule: Suspicious Shell Process Execution (SP-001)
