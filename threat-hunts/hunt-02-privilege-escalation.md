@@ -45,5 +45,5 @@ event.dataset:system.auth AND process.name:sudo AND user.name:root
 4. Restrict sudo to specific commands only
 
 ## Conclusion
-✅ Hypothesis CONFIRMED — 891 sudo events detected
-⚠️ Critical Gap Found — sudo commands not fully logged
+✅ Hypothesis CONFIRMED 891 sudo events detected
+⚠️ Critical Gap Found sudo commands not fully logged
