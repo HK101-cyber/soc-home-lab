@@ -4,7 +4,7 @@
 Simulate attacker who gained access and escalates privileges using sudo.
 
 ## Attack Machine
-Ubuntu (inside — post-compromise simulation)
+Ubuntu (inside post-compromise simulation)
 
 ## Attack Commands
 ```bash
@@ -16,11 +16,11 @@ sudo netstat -tlnp
 ```
 
 ## MITRE ATT&CK
-- Technique: T1548 — Abuse Elevation Control Mechanism
+- Technique: T1548 Abuse Elevation Control Mechanism
 - Tactic: Privilege Escalation
 
 ## Kill Chain Position
-Step 6 of attack — attacker already inside, now escalating
+Step 6 of attack attacker already inside, now escalating
 
 ## Detection Rule Triggered
 - Rule: Privilege Escalation via Sudo (PE-SUDO-001)
