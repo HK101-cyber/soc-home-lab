@@ -1,4 +1,4 @@
-# SOC Home Lab — Final Report
+# SOC Home Lab Final Report
 ## Enterprise-Grade Security Operations Center
 
 ---
@@ -119,27 +119,27 @@ and custom KQL detection rules.
 
 ## Key Security Findings
 
-### Finding 1 — Brute Force Attack Detected
+### Finding 1 - Brute Force Attack Detected
 Attack Source:  192.168.56.1
 Target:         root user via SSH
 Attempts:       1,197 in 10 seconds
 Tool:           Hydra with rockyou.txt
 Status:         BLOCKED — no successful login
 Detection:      Rule BF-SSH-001 triggered
-### Finding 2 — Privilege Escalation Activity
+### Finding 2 - Privilege Escalation Activity
 Users:          hammad, root
 Sudo Events:    891
 Gap Found:      Sudo commands not fully logged
 Risk:           Cannot audit all privileged activity
 Recommendation: Enable auditd logging
-### Finding 3 — Lateral Movement Baseline
+### Finding 3 - Lateral Movement Baseline
 Source IP:      192.168.56.1
 Destination:    Ubuntu SIEM (10.0.2.4)
 Sessions:       69 over 30 days
 Username:       hammad
 Status:         MONITORED
 
-### Finding 4 — Windows PowerShell Abuse
+### Finding 4 - Windows PowerShell Abuse
 Machine:        Windows Host PC
 Commands:       Encoded PowerShell, cmd.exe, reg query
 Capture:        Sysmon Event ID 1
@@ -245,7 +245,7 @@ Lab Build Time:        Multiple sessions
 ## Conclusion
 
 This SOC home lab demonstrates complete end-to-end security
-operations capability — from infrastructure deployment through
+operations capability from infrastructure deployment through
 threat detection, attack simulation, and proactive threat hunting.
 
 Every component was built, configured, tested, and documented
