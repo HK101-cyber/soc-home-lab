@@ -2,7 +2,7 @@
 
 ## Objective
 Simulate attacker using PowerShell for reconnaissance and suspicious
-execution — one of the most common real-world attack techniques.
+execution one of the most common real-world attack techniques.
 
 ## Attack Machine
 Windows Host PC (attacker already inside)
@@ -17,16 +17,16 @@ cmd.exe /c systeminfo
 ```
 
 ## MITRE ATT&CK
-- Technique: T1059.001 — PowerShell
+- Technique: T1059.001 PowerShell
 - Tactic: Execution
 - Sub-technique: Command and Scripting Interpreter
 
 ## Kill Chain Position
-Post-compromise — attacker running recon and downloading tools
+Post-compromise attacker running recon and downloading tools
 
 ## What Sysmon Captured
-- Event ID 1 — Process Creation (powershell.exe)
-- Event ID 1 — Process Creation (cmd.exe)
+- Event ID 1 Process Creation (powershell.exe)
+- Event ID 1 Process Creation (cmd.exe)
 - Command line arguments logged
 - Parent process recorded
 - Hash of executable captured
