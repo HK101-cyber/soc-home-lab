@@ -1,4 +1,4 @@
-# SOC Home Lab — Setup Log
+# SOC Home Lab Setup Log
 
 ## Environment
 - OS: Ubuntu Server 22.04 LTS
@@ -6,7 +6,7 @@
 - RAM: 2.9GB
 - Disk: 24GB
 
-## Phase 1 — System Preparation ✅
+## Phase 1 System Preparation ✅
 - [x] System updated and upgraded
 - [x] Essential tools installed (curl, wget, git, ufw)
 - [x] Firewall configured (ports 22, 9200, 5601, 5044, 8220)
@@ -14,30 +14,30 @@
 - [x] JAVA_HOME environment variable set
 - [x] Elastic APT repository added
 
-## Phase 2 — ELK Installation (In Progress)
+## Phase 2 ELK Installation (In Progress)
 - [ ] Elasticsearch installed and configured
 - [ ] Kibana installed and configured
 - [ ] Logstash installed and configured
 - [ ] Filebeat installed and configured
 
-## Phase 3 — Log Ingestion
+## Phase 3 Log Ingestion
 - [ ] Linux logs ingested
 - [ ] Windows logs ingested (Winlogbeat)
 - [ ] Sysmon telemetry configured
 
-## Phase 4 — Detection Engineering
+## Phase 4 Detection Engineering
 - [ ] 15 detection rules written
 - [ ] Rules tested against simulated attacks
 - [ ] Rules exported to GitHub
 
-## Phase 5 — Attack Simulations
+## Phase 5 Attack Simulations
 - [ ] Brute force SSH (Hydra)
 - [ ] PowerShell abuse simulation
 - [ ] Privilege escalation
 - [ ] Lateral movement
 - [ ] Data exfiltration
 
-## Phase 6 — Dashboards
+## Phase 6 Dashboards
 - [ ] 8 Kibana dashboards built
 - [ ] Dashboards exported to GitHub
 
@@ -56,7 +56,7 @@ sudo systemctl start logstash
 sudo systemctl status elasticsearch kibana logstash
 ```
 
-## Phase 2 — Elasticsearch ✅
+## Phase 2 Elasticsearch ✅
 - [x] Elasticsearch 8.x installed
 - [x] cluster.name set to soc-home-lab
 - [x] network.host set to 0.0.0.0
@@ -66,7 +66,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] API verified on port 9200
 - [x] Screenshots saved
 
-## Phase 3 — Kibana ✅
+## Phase 3 Kibana ✅
 - [x] Kibana 8.19 installed
 - [x] server.host set to 0.0.0.0
 - [x] server.port set to 5601
@@ -77,7 +77,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Kibana home shows all 4 modules
 - [x] Screenshots saved and pushed
 
-## Phase 4 — Logstash ✅
+## Phase 4 Logstash ✅
 - [x] Logstash installed
 - [x] soc-pipeline.conf created
 - [x] Input: Beats on port 5044
@@ -87,7 +87,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Service running and verified
 - [x] Port 5044 listening confirmed
 
-## Phase 5 — Filebeat ✅
+## Phase 5 Filebeat ✅
 - [x] Filebeat 8.19.15 installed
 - [x] System module enabled (syslog + auth)
 - [x] Output configured to Elasticsearch
@@ -97,7 +97,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Logs visible in Kibana Discover
 - [x] Screenshots saved
 
-## Phase 6 — Dashboard 1 ✅
+## Phase 6 Dashboard 1 ✅
 - [x] SOC Authentication Overview dashboard built
 - [x] 6 panels created with real data
 - [x] KQL queries verified working
@@ -105,7 +105,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Screenshot taken and transferred
 - [x] Pushed to GitHub
 
-## Phase 7 — Detection Rule 1 ✅
+## Phase 7 Detection Rule 1 ✅
 - [x] Brute Force SSH rule documented
 - [x] KQL query: event.category:authentication AND event.outcome:failure
 - [x] Threshold: 5 failures in 5 minutes
@@ -113,7 +113,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Rule tested against real Hydra attack
 - [x] Pushed to GitHub detection-rules folder
 
-## Phase 8 — Attack Simulation 1 ✅
+## Phase 8 Attack Simulation 1 ✅
 - [x] Brute force attack simulated from Kali
 - [x] 50+ failed SSH attempts generated
 - [x] Logs captured and ingested by Filebeat
@@ -122,7 +122,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Attack report documented
 - [x] MITRE T1110 mapped
 
-## Phase 9 — Detection Rules Deployed ✅
+## Phase 9 Detection Rules Deployed ✅
 - [x] All 5 rules created in Kibana SIEM
 - [x] Kibana security and encryption keys configured
 - [x] Elasticsearch xpack.security enabled
@@ -133,25 +133,25 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] All rule screenshots taken
 - [x] Security setup guide documented
 
-## Phase 10 — All Attack Simulations Complete ✅
-- [x] Simulation 1 — Brute Force SSH (Kali → Ubuntu)
-- [x] Simulation 2 — Privilege Escalation (sudo abuse)
-- [x] Simulation 3 — Lateral Movement (SSH from Kali)
-- [x] Simulation 4 — Suspicious Process (bash execution)
-- [x] Simulation 5 — Multiple Failed Auth (username enum)
+## Phase 10 All Attack Simulations Complete ✅
+- [x] Simulation 1 - Brute Force SSH (Kali → Ubuntu)
+- [x] Simulation 2 - Privilege Escalation (sudo abuse)
+- [x] Simulation 3 - Lateral Movement (SSH from Kali)
+- [x] Simulation 4 - Suspicious Process (bash execution)
+- [x] Simulation 5 - Multiple Failed Auth (username enum)
 - [x] All 5 alerts fired and confirmed in Kibana
 - [x] All screenshots taken and pushed
 - [x] All simulation reports documented
 - [x] Complete attack kill chain documented
 
-## Phase 11 — Dashboard 3 ✅
+## Phase 11 Dashboard 3 ✅
 - [x] SOC System Overview dashboard built
 - [x] 6 panels created with real data
 - [x] Dashboard exported as .ndjson
 - [x] Screenshot taken and pushed
 - [x] Pushed to GitHub
 
-## Phase 12 — Winlogbeat ✅
+## Phase 12 Winlogbeat ✅
 - [x] Winlogbeat 9.4.2 installed on Windows
 - [x] Application, System, Security logs configured
 - [x] Output to Elasticsearch 192.168.56.101:9200
@@ -160,7 +160,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Screenshots taken and pushed
 - [x] Config saved to GitHub
 
-## Phase 13 — Sysmon ✅
+## Phase 13 Sysmon ✅
 - [x] Sysmon installed on Windows host
 - [x] SwiftOnSecurity config applied
 - [x] 23 event types being monitored
@@ -169,7 +169,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Screenshots taken and pushed
 - [x] Config saved to GitHub
 
-## Phase 14 — Dashboard 4 Windows Security ✅
+## Phase 14 Dashboard 4 Windows Security ✅
 - [x] Windows Security Overview dashboard built
 - [x] 8 panels created with real Winlogbeat data
 - [x] Sysmon events visible in dashboard
@@ -177,7 +177,7 @@ sudo systemctl status elasticsearch kibana logstash
 - [x] Dashboard exported as .ndjson
 - [x] Screenshot taken and pushed
 
-## Phase 15 — Attack Simulation 6 ✅
+## Phase 15 Attack Simulation 6 ✅
 - [x] PowerShell abuse simulated on Windows
 - [x] Sysmon captured Event ID 1 (process creation)
 - [x] Winlogbeat shipped events to Elasticsearch
