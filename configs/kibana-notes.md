@@ -17,10 +17,10 @@ Removing it from kibana.yml resolved the FATAL startup error
 - http://192.168.56.101:5601
 
 ## Modules Available
-- Elasticsearch — search and indexing
-- Observability — logs, metrics, traces
-- Security — SIEM, alerts, threat detection
-- Analytics — dashboards and visualizations
+- Elasticsearch search and indexing
+- Observability logs, metrics, traces
+- Security SIEM, alerts, threat detection
+- Analytics dashboards and visualizations
 
 ## Verification Commands
 ```bash
