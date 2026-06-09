@@ -17,11 +17,11 @@ arp -a
 ```
 
 ## MITRE ATT&CK
-- Technique: T1021.004 — Remote Services SSH
+- Technique: T1021.004 Remote Services SSH
 - Tactic: Lateral Movement
 
 ## Kill Chain Position
-Step 4 of attack — attacker moving between machines
+Step 4 of attack attacker moving between machines
 
 ## Detection Rule Triggered
 - Rule: Lateral Movement via SSH (LM-SSH-001)
