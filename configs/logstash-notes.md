@@ -20,7 +20,7 @@
 - Heap set to 256MB (optimized for 2.9GB RAM VM)
 
 ## Ports
-- 5044 — Beats input (Filebeat/Winlogbeat connect here)
+- 5044 Beats input (Filebeat/Winlogbeat connect here)
 
 ## Status
 - Installed: ✅
