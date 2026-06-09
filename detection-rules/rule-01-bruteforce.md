@@ -20,16 +20,16 @@ event.category:authentication AND event.outcome:failure
 - Grouped by: source.ip and user.name
 
 ## MITRE ATT&CK Mapping
-- **Technique:** T1110 — Brute Force
+- **Technique:** T1110 Brute Force
 - **Tactic:** Credential Access
 - **Description:** Adversary attempts to gain credentials by repeated login attempts
 
 ## Fields Monitored
-- `event.category` — must be "authentication"
-- `event.outcome` — must be "failure"
-- `source.ip` — attacker source IP
-- `user.name` — target username
-- `@timestamp` — event time
+- `event.category` must be "authentication"
+- `event.outcome`  must be "failure"
+- `source.ip` attacker source IP
+- `user.name` target username
+- `@timestamp` event time
 
 ## Alert Actions
 When triggered:
