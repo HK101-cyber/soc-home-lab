@@ -7,26 +7,26 @@ Attacker is pivoting between machines using SSH.
 2026-06-08
 
 ## Hunter
-Hammad Khan — SOC Engineer
+Hammad Khan SOC Engineer
 
 ## KQL Queries Used
 event.dataset:system.auth AND process.name:sshd AND event.outcome:success
 event.dataset:system.auth AND process.name:sshd AND event.outcome:success AND source.ip:192.168.56.1
 ## Real Findings
 
-### Finding 1 — Successful SSH Sessions Detected
+### Finding 1 Successful SSH Sessions Detected
 - Total successful logins: 69
 - Source IP: 192.168.56.1 (Windows PC)
 - Destination: 10.0.2.4 (Ubuntu VM)
 - Username: hammad
 
-### Finding 2 — Movement Pattern
+### Finding 2 Movement Pattern
 - All logins from same source IP
 - Consistent username used
-- Monitoring period: May 9 — Jun 8, 2026 (30 days)
+- Monitoring period: May 9 - Jun 8, 2026 (30 days)
    - Interval: 12 hour auto detection
 
-### Finding 3 — Baseline Established
+### Finding 3 Baseline Established
 - 69 successful sessions over 30 days
 - Average 2-3 sessions per day
 - No anomalous spikes detected
@@ -37,8 +37,8 @@ event.dataset:system.auth AND process.name:sshd AND event.outcome:success AND so
 - Note: Some logins are legitimate admin sessions
 
 ## MITRE ATT&CK
-- T1021.004 — Remote Services SSH
-- T1078 — Valid Accounts
+- T1021.004 Remote Services SSH
+- T1078 Valid Accounts
 
 ## Recommendations
 1. Whitelist only known admin IPs
@@ -47,5 +47,5 @@ event.dataset:system.auth AND process.name:sshd AND event.outcome:success AND so
 4. Log all post-login commands
 
 ## Conclusion
-✅ Hypothesis CONFIRMED — 69 successful SSH sessions
+✅ Hypothesis CONFIRMED 69 successful SSH sessions
 ✅ Baseline established for future anomaly detection
