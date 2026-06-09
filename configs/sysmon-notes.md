@@ -5,7 +5,7 @@ System Monitor (Sysmon) is a Windows system service that logs
 detailed security telemetry to Windows Event Log.
 
 ## Version
-Sysmon 64-bit — Latest version
+Sysmon 64-bit Latest version
 
 ## Config Used
 SwiftOnSecurity sysmon-config (industry standard)
