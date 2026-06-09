@@ -1,11 +1,11 @@
-# Detection Rule 5: Account Lockout — Potential Account Compromise
+# Detection Rule 5: Account Lockout Potential Account Compromise
 
 ## Rule Details
 - **Rule ID:** AL-001
 - **Name:** Account Lockout After Failed Attempts
 - **Severity:** Medium
 - **Risk Score:** 60
-- **MITRE:** T1110 — Brute Force
+- **MITRE:** T1110 Brute Force
 
 ## KQL Query
 event.category:authentication AND event.action:user-locked AND process.name:sshd
