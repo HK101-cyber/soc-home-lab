@@ -34,12 +34,12 @@ Failed password for root from 192.168.56.100 port XXXXX ssh2
 - **Status:** ✅ WOULD TRIGGER
 
 ## MITRE ATT&CK Mapping
-- **Technique:** T1110 — Brute Force
+- **Technique:** T1110 Brute Force
 - **Tactic:** Credential Access
 
 ## Screenshots
-1. hydra-brute-force-kali.PNG — Attack in progress on Kali
-2. ubuntu-failed-logins.png — Real-time failed attempts on Ubuntu
+1. hydra-brute-force-kali.PNG Attack in progress on Kali
+2. ubuntu-failed-logins.png Real-time failed attempts on Ubuntu
 
 ## Findings
 ✅ Attack successfully simulated
