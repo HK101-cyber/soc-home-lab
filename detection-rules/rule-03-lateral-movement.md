@@ -1,11 +1,11 @@
-# Detection Rule 3: Lateral Movement — SSH Between Servers
+# Detection Rule 3: Lateral Movement SSH Between Servers
 
 ## Rule Details
 - **Rule ID:** LM-SSH-001
 - **Name:** Lateral Movement via SSH
 - **Severity:** Critical
 - **Risk Score:** 85
-- **MITRE:** T1021.004 — SSH
+- **MITRE:** T1021.004 SSH
 
 ## KQL Query
 event.category:authentication AND process.name:sshd AND source.ip:192.168.* AND event.outcome:success
