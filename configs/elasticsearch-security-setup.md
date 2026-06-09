@@ -4,7 +4,7 @@
 Complete guide for enabling xpack.security, generating SSL certificates,
 setting passwords, and configuring Kibana encryption keys for SIEM rules.
 
-## Phase 1 — Enable Security & Generate SSL Certificates
+## Phase 1 Enable Security & Generate SSL Certificates
 
 ### Create certificates directory:
 ```bash
@@ -36,7 +36,7 @@ sudo chown -R elasticsearch:elasticsearch /etc/elasticsearch/certs
 sudo chown elasticsearch:elasticsearch /etc/elasticsearch/elasticsearch.keystore
 ```
 
-## Phase 2 — Configure elasticsearch.yml
+## Phase 2 Configure elasticsearch.yml
 
 Add at bottom of /etc/elasticsearch/elasticsearch.yml:
 ```yaml
@@ -51,7 +51,7 @@ xpack.security.transport.ssl:
   truststore.path: certs/transport.p12
 ```
 
-## Phase 3 — Generate User Passwords
+## Phase 3 Generate User Passwords
 
 ```bash
 # Generate elastic superuser password
@@ -61,7 +61,7 @@ sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -a -f
 sudo /usr/share/elasticsearch/bin/elasticsearch-reset-password -u kibana_system -a -f
 ```
 
-## Phase 4 — Configure kibana.yml
+## Phase 4 Configure kibana.yml
 
 Add at bottom of /etc/kibana/kibana.yml:
 ```yaml
@@ -81,7 +81,7 @@ xpack.reporting.encryptionKey: "your_generated_key_2"
 xpack.security.encryptionKey: "your_generated_key_3"
 ```
 
-## Phase 5 — Verify Setup
+## Phase 5 Verify Setup
 
 ```bash
 # Check Elasticsearch
