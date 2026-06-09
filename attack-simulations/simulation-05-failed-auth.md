@@ -19,11 +19,11 @@ ssh guest@192.168.56.101
 ```
 
 ## MITRE ATT&CK
-- Technique: T1110.001 — Password Guessing
+- Technique: T1110.001 Password Guessing
 - Tactic: Credential Access
 
 ## Kill Chain Position
-Step 3 of attack — username enumeration before brute force
+Step 3 of attack username enumeration before brute force
 
 ## Detection Rule Triggered
 - Rule: Multiple Failed Authentication Attempts (AL-001)
