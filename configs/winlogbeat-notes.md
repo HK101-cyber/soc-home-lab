@@ -8,10 +8,10 @@ Installed on Windows host PC to monitor all Windows activity.
 Winlogbeat 9.4.2
 
 ## Log Sources Configured
-- Application — Windows application events
-- System — Windows system events
-- Security — Login, logoff, privilege use, account changes
-- Microsoft-Windows-Sysmon/Operational — Deep process telemetry
+- Application Windows application events
+- System Windows system events
+- Security Login, logoff, privilege use, account changes
+- Microsoft-Windows-Sysmon/Operational Deep process telemetry
 
 ## Output
 - Elasticsearch: 192.168.56.101:9200
