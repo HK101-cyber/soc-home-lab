@@ -1,4 +1,4 @@
-# SOC Home Lab — Enterprise SIEM Environment
+# SOC Home Lab Enterprise SIEM Environment
 
 ![Status](https://img.shields.io/badge/Status-Active%20Build-green)
 ![ELK](https://img.shields.io/badge/ELK-8.19.15-blue)
@@ -13,7 +13,7 @@ A fully functional Security Operations Center (SOC) home lab built from scratch 
 | Author | Hammad Khan |
 | Start Date | May 20, 2026 |
 | Last Updated | June 8, 2026 |
-| Status | Phase 1 Complete — ELK SIEM Operational |
+| Status | Complete ELK SIEM Operational |
 | GitHub | github.com/HK101-cyber |
 
 ## Lab Architecture
@@ -138,21 +138,21 @@ GitHub Commits: 20+
 
 | Date | Milestone |
 |------|-----------|
-| May 20, 2026 | Lab environment setup — Ubuntu SIEM deployed |
-| May 20, 2026 | SSH configured — PowerShell connected |
+| May 20, 2026 | Lab environment setup Ubuntu SIEM deployed |
+| May 20, 2026 | SSH configured PowerShell connected |
 | May 20, 2026 | Elasticsearch 8.19 installed and running |
-| May 22, 2026 | Kibana installed — browser verified |
-| May 22, 2026 | Logstash installed — port 5044 listening |
-| May 23, 2026 | Filebeat configured — 431K+ logs ingested |
+| May 22, 2026 | Kibana installed browser verified |
+| May 22, 2026 | Logstash installed port 5044 listening |
+| May 23, 2026 | Filebeat configured 431K+ logs ingested |
 | May 25, 2026 | All 5 Linux detection rules deployed |
-| May 25, 2026 | Brute force attack simulated — alert fired |
+| May 25, 2026 | Brute force attack simulated alert fired |
 | Jun 1, 2026 | Elasticsearch security configured |
 | Jun 1, 2026 | Kibana encryption keys added |
 | Jun 2, 2026 | All 6 attack simulations completed |
-| Jun 4, 2026 | Winlogbeat installed — Windows logs ingested |
-| Jun 4, 2026 | Sysmon deployed — deep Windows telemetry |
+| Jun 4, 2026 | Winlogbeat installed Windows logs ingested |
+| Jun 4, 2026 | Sysmon deployed deep Windows telemetry |
 | Jun 5, 2026 | Dashboard 4 (Windows Security) built |
-| Jun 5, 2026 | PowerShell attack simulated — Sysmon captured |
+| Jun 5, 2026 | PowerShell attack simulated Sysmon captured |
 | Jun 8, 2026 | 3 threat hunt reports completed |
 | Jun 8, 2026 | Final SOC lab report written |
 
@@ -169,12 +169,12 @@ Version Control: Git, GitHub
 
 ## Related Reports
 
-reports/soc-lab-final-report.md — Complete technical report  
-detection-rules/README.md — All rule documentation  
-attack-simulations/README.md — Complete attack kill chain  
-threat-hunts/README.md — All hunt reports
+reports/soc-lab-final-report.md --> Complete technical report  
+detection-rules/README.md --> All rule documentation  
+attack-simulations/README.md --> Complete attack kill chain  
+threat-hunts/README.md --> All hunt reports
 
-## Coming Next — Phase 2
+## Coming Next Phase 2
 
 Splunk Enterprise SIEM  
 SPL detection rules  
