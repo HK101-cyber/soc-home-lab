@@ -6,6 +6,10 @@
 
 A fully functional Security Operations Center (SOC) home lab built from scratch on virtual machines. Replicates enterprise SOC environment using industry-standard SIEM platforms, detection rules, and real attack simulations.
 
+![Authentication Dashboard Preview](screenshots/dashboard-auth-overview.PNG)
+
+📄 **[Read the Full Final Report](reports/soc-lab-final-report.md)** — includes embedded screenshots for every dashboard, alert, and attack simulation.
+
 ## Lab Details
 
 | Field | Details |
@@ -169,7 +173,7 @@ Version Control: Git, GitHub
 
 ## Related Reports
 
-reports/soc-lab-final-report.md --> Complete technical report  
+📄 [**View Full Final Report**](reports/soc-lab-final-report.md) — Complete technical report with embedded evidence screenshots  
 detection-rules/README.md --> All rule documentation  
 attack-simulations/README.md --> Complete attack kill chain  
 threat-hunts/README.md --> All hunt reports
