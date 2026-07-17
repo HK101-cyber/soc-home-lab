@@ -18,6 +18,7 @@ and custom KQL detection rules.
 ## Lab Environment
 
 ### Infrastructure
+
 | Component | Details |
 |-----------|---------|
 | SIEM Server | Ubuntu Server 22.04 LTS |
@@ -29,6 +30,7 @@ and custom KQL detection rules.
 | Network | Host-Only (192.168.56.x) |
 
 ### SIEM Stack
+
 | Component | Version | Status |
 |-----------|---------|--------|
 | Elasticsearch | 8.19.15 | ✅ Running |
@@ -38,11 +40,18 @@ and custom KQL detection rules.
 | Winlogbeat | 8.19.15 | ✅ Running |
 | Sysmon | Latest | ✅ Running |
 
+![Elasticsearch Status](../screenshots/elasticsearch-status.png)
+*Elasticsearch cluster running and healthy*
+
+![Kibana Running](../screenshots/kibana-running.png)
+*Kibana web interface accessible and operational*
+
 ---
 
 ## Data Ingestion
 
 ### Log Sources
+
 | Source | Agent | Index | Documents |
 |--------|-------|-------|-----------|
 | Ubuntu syslog | Filebeat | filebeat-* | 431,000+ |
@@ -54,6 +63,15 @@ and custom KQL detection rules.
 - Linux logs: 431,000+
 - Windows logs: Active streaming
 - Combined: 500,000+ security events
+
+![Filebeat Live Logs](../screenshots/filebeat%20log%20live.PNG)
+*Filebeat ingesting live logs into Elasticsearch*
+
+![Winlogbeat Windows Logs](../screenshots/winlogbeat-windows-logs.png)
+*Windows logs flowing via Winlogbeat*
+
+![Sysmon Kibana Data](../screenshots/sysmon-kibana-data.png)
+*Sysmon telemetry visible in Kibana*
 
 ---
 
@@ -68,6 +86,18 @@ and custom KQL detection rules.
 
 **Total Dashboards: 4**
 **Total Panels: 26**
+
+![Authentication Overview Dashboard](../screenshots/dashboard-auth-overview.PNG)
+*Dashboard 1 — Authentication Overview*
+
+![Network Overview Dashboard](../screenshots/dashboard-network-overview-fixed.png)
+*Dashboard 2 — Network Overview*
+
+![System Overview Dashboard](../screenshots/dashboard-system-overview.png)
+*Dashboard 3 — System Overview*
+
+![Windows Security Dashboard](../screenshots/dashboard-windows-security.png)
+*Dashboard 4 — Windows Security*
 
 ---
 
@@ -85,6 +115,9 @@ and custom KQL detection rules.
 **Total Rules: 6**
 **All Rules: Active and tested**
 
+![All Rules Enabled](../screenshots/all-rules-enabled.png)
+*All 6 detection rules deployed and enabled in Kibana*
+
 ---
 
 ## Attack Simulations
@@ -100,6 +133,12 @@ and custom KQL detection rules.
 
 **Total Simulations: 6**
 **Alerts Fired: 6/6 (100% detection rate)**
+
+![Brute Force Alert Fired](../screenshots/brute-force-alert-fired.png)
+*Brute force attack detected — alert fired in Kibana Security dashboard*
+
+![Sysmon Event Viewer](../screenshots/sysmon-event-viewer.png)
+*Sysmon capturing PowerShell abuse simulation on Windows*
 
 ---
 
@@ -126,12 +165,14 @@ Attempts:       1,197 in 10 seconds
 Tool:           Hydra with rockyou.txt
 Status:         BLOCKED — no successful login
 Detection:      Rule BF-SSH-001 triggered
+
 ### Finding 2 - Privilege Escalation Activity
 Users:          hammad, root
 Sudo Events:    891
 Gap Found:      Sudo commands not fully logged
 Risk:           Cannot audit all privileged activity
 Recommendation: Enable auditd logging
+
 ### Finding 3 - Lateral Movement Baseline
 Source IP:      192.168.56.1
 Destination:    Ubuntu SIEM (10.0.2.4)
@@ -146,120 +187,25 @@ Capture:        Sysmon Event ID 1
 Detection:      Rule triggered in Kibana
 MITRE:          T1059.001
 
----
-
-## Security Gaps Identified
-
-| # | Gap | Risk | Recommendation |
-|---|-----|------|----------------|
-| 1 | Sudo commands not fully logged | High | Enable auditd |
-| 2 | No IP whitelist for SSH | Medium | Restrict SSH to known IPs |
-| 3 | Root SSH login enabled | High | Disable root SSH |
-| 4 | Password auth enabled | High | SSH keys only |
-| 5 | No network segmentation | Medium | Implement VLANs |
-
----
-
-## Recommendations
-
-### Immediate Actions (Critical):
-1. Disable root SSH login
-2. Implement SSH key authentication
-3. Enable Fail2ban
-4. Enable auditd for sudo logging
-
-### Short Term (High Priority):
-1. Implement IP whitelist for SSH
-2. Enable MFA for remote access
-3. Regular log review schedule
-4. Tune detection rules based on findings
-
-### Long Term (Medium Priority):
-1. Network segmentation implementation
-2. Deploy additional honeypots
-3. Integrate threat intelligence feeds
-4. Implement SOAR for automated response
-
----
-
-## Skills Demonstrated
-
-### SOC Engineering:
-- ELK Stack deployment and configuration
-- Log ingestion pipeline design
-- Detection rule writing (KQL)
-- Dashboard creation and management
-- Security monitoring operations
-
-### Threat Detection:
-- Custom KQL detection rules
-- MITRE ATT&CK framework mapping
-- Alert tuning and validation
-- False positive management
-
-### Threat Hunting:
-- Hypothesis-driven hunting
-- KQL query development
-- Finding documentation
-- Security gap identification
-
-### Windows Security:
-- Sysmon deployment and configuration
-- Windows Event Log analysis
-- Winlogbeat configuration
-- PowerShell attack detection
-
-### Attack Simulation:
-- Controlled attack execution
-- Evidence collection
-- Attack documentation
-- Kill chain mapping
-
-
-```mermaid
-graph TD
-    ROOT[soc-home-lab] 
-    ROOT --> CONFIGS[configs<br/>All service configurations]
-    ROOT --> RULES[detection-rules<br/>6 KQL detection rules]
-    ROOT --> DASHBOARDS[dashboards<br/>4 exported dashboards]
-    ROOT --> ATTACKS[attack-simulations<br/>6 attack reports]
-    ROOT --> HUNTS[threat-hunts<br/>3 hunt reports]
-    ROOT --> SCREENS[screenshots<br/>All evidence screenshots]
-    ROOT --> REPORTS[reports<br/>Lab reports]
-```
-## Lab Statistics
-Total Log Events:      500,000+
-Dashboards Built:      4
-Detection Rules:       6
-Attack Simulations:    6
-Alerts Fired:          6/6 (100%)
-Threat Hunts:          3
-Threats Confirmed:     3/3 (100%)
-Security Gaps Found:   5
-GitHub Commits:        20+
-Lab Build Time:        Multiple sessions
+![Rule 06 PowerShell Deployed](../screenshots/rule-06-powershell-deployed.png)
+*PowerShell abuse detection rule active and confirmed*
 
 ---
 
 ## Conclusion
 
-This SOC home lab demonstrates complete end-to-end security
-operations capability from infrastructure deployment through
-threat detection, attack simulation, and proactive threat hunting.
+This SOC home lab demonstrates a fully operational, enterprise-grade
+security monitoring environment built entirely from open-source
+tools. All detection rules were tested against real, simulated
+attacks and achieved a 100% detection rate. Threat hunting
+activities confirmed active threats in the environment and
+identified a genuine logging gap, demonstrating both defensive
+capability and analytical rigor.
 
-Every component was built, configured, tested, and documented
-professionally. All configurations, detection rules, dashboards,
-and reports are version-controlled on GitHub providing permanent
-verifiable evidence of hands-on cybersecurity skills.
-
-**This lab is ready for portfolio presentation to employers
-and freelance clients.**
+**This lab is portfolio-ready and demonstrates hands-on,
+production-relevant SOC engineering skills.**
 
 ---
 
-## Report Details
-- Author: Hammad Khan
-- Date: 2026-06-08
-- Version: 1.0
-- Status: Complete ✅
-- GitHub: github.com/HK101-cyber/soc-home-lab
+*Part of a complete cybersecurity portfolio built command by
+command in a real lab environment.*
