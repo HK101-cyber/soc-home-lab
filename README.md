@@ -187,5 +187,9 @@ Wazuh XDR deployment
 
 Part of a complete cybersecurity portfolio built command by command in a real lab environment.
 
-**Connect:** [LinkedIn](https://linkedin.com/in/hammad-khan101)  
-**GitHub:** [github.com/HK101-cyber](https://github.com/HK101-cyber)
+**Connect:**
+- **LinkedIn:** [hammad-khan-sec](https://www.linkedin.com/in/hammad-khan-sec)
+- **TryHackMe:** [PentesterHK](https://tryhackme.com/p/PentesterHK)
+- **LetsDefend:** [HK101cyber](https://app.letsdefend.io/user/HK101cyber)  
+- **GitHub:** [github.com/HK101-cyber](https://github.com/HK101-cyber)
+- **GitHub:** [github.com/HK101-cyber](https://github.com/HK101-cyber)
